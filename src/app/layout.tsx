@@ -1,6 +1,7 @@
 import ".././styles/global.css";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
+import Navbar from "@/compoents/navbar";
 
 export default function RootLayout({
 	children,
@@ -28,6 +29,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className="dark:bg-cyan-950 min-h-screen relative flex item-center justify-center overflow-hidden">
+				<Navbar />
 				{children}
 				<PrismicPreview repositoryName={repositoryName} />
 			</body>
