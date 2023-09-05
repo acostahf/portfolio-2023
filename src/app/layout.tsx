@@ -28,9 +28,10 @@ export default function RootLayout({
 					rel="stylesheet"
 				/>
 			</head>
-			<body className="dark:bg-cyan-950 min-h-screen relative flex item-center justify-center overflow-hidden">
-				<Navbar />
+			<body className="dark:bg-cyan-950 min-h-screen relative flex flex-col item-center justify-center">
+				{/* <Navbar /> */}
 				{children}
+
 				<PrismicPreview repositoryName={repositoryName} />
 			</body>
 		</html>
