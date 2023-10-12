@@ -84,6 +84,48 @@
 								"url": "https://prismic.io"
 							}
 						}
+					],
+					[
+						"status",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Consequat ullamco ut esse et. Incididunt laboris cupidatat deserunt."
+									}
+								}
+							]
+						}
+					],
+					[
+						"tech",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Magna commodo non cillum qui commodo ipsum et. Excepteur ipsum incididunt veniam ad laboris esse eu sunt quis ea consequat labore. Id consectetur ad eu ex Lorem aliqua laboris magna laboris et reprehenderit."
+									}
+								}
+							]
+						}
+					],
+					[
+						"responsibilities",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Aliquip eu elit exercitation adipisicing ut duis ipsum deserunt minim sit et eu. Voluptate sunt laborum reprehenderit mollit do ex aute. Duis laborum non pariatur incididunt magna eu Lorem sunt."
+									}
+								}
+							]
+						}
 					]
 				]
 			}

@@ -51,6 +51,33 @@
         "url": {
           "type": "Link",
           "config": { "label": "url", "placeholder": "", "select": null }
+        },
+        "status": {
+          "type": "StructuredText",
+          "config": {
+            "label": "status",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "tech": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Tech",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "responsibilities": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Responsibilities ",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
         }
       }
     }

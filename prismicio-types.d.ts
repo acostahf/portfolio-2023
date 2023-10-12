@@ -312,6 +312,36 @@ export interface WorkSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   url: prismic.LinkField;
+
+  /**
+   * status field in *Work → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.items[].status
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  status: prismic.RichTextField;
+
+  /**
+   * Tech field in *Work → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.items[].tech
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tech: prismic.RichTextField;
+
+  /**
+   * Responsibilities  field in *Work → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.items[].responsibilities
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  responsibilities: prismic.RichTextField;
 }
 
 /**
