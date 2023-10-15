@@ -23,7 +23,8 @@
           "choices": {
             "rich_text": { "type": "SharedSlice" },
             "hero": { "type": "SharedSlice" },
-            "work": { "type": "SharedSlice" }
+            "work": { "type": "SharedSlice" },
+            "about": { "type": "SharedSlice" }
           }
         }
       }

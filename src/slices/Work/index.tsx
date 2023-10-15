@@ -14,7 +14,7 @@ export type WorkProps = SliceComponentProps<Content.WorkSlice>;
  * Component for "Work" Slices.
  */
 const Work = ({ slice }: WorkProps): JSX.Element => {
-	const [selected, setSelected] = useState(null);
+	const [selected, setSelected] = useState(slice.items[0]);
 	const handleSelection = (item) => {
 		setSelected(item);
 	};

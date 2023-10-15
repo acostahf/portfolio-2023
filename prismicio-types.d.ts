@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = RichTextSlice | HeroSlice | WorkSlice;
+type HomeDocumentDataSlicesSlice =
+  | RichTextSlice
+  | HeroSlice
+  | WorkSlice
+  | AboutSlice;
 
 /**
  * Content for Home documents
@@ -84,7 +88,11 @@ export type NavigationitemDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = RichTextSlice | HeroSlice | WorkSlice;
+type PageDocumentDataSlicesSlice =
+  | RichTextSlice
+  | HeroSlice
+  | WorkSlice
+  | AboutSlice;
 
 /**
  * Content for Page documents
@@ -161,6 +169,48 @@ export type AllDocumentTypes =
   | HomeDocument
   | NavigationitemDocument
   | PageDocument;
+
+/**
+ * Primary content in *About → Primary*
+ */
+export interface AboutSliceDefaultPrimary {
+  /**
+   * content field in *About → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for About Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *About*
+ */
+type AboutSliceVariation = AboutSliceDefault;
+
+/**
+ * About Shared Slice
+ *
+ * - **API ID**: `about`
+ * - **Description**: About
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
 
 /**
  * Primary content in *Hero → Primary*
@@ -388,6 +438,9 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       AllDocumentTypes,
+      AboutSlice,
+      AboutSliceVariation,
+      AboutSliceDefault,
       HeroSlice,
       HeroSliceVariation,
       HeroSliceDefault,
