@@ -22,16 +22,16 @@ const Work = ({ slice }: WorkProps): JSX.Element => {
 		<section
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
-			className="flex flex-col justify-center items-center h-screen p-20"
+			className="flex flex-col justify-center items-center min-h-screen p-4 md:p-20 w-full"
 		>
-			<div className="grid grid-cols-3 border-gray-100 border-4 rounded-lg gap-4 p-4 h-[600px] w-full">
+			<div className="md:grid md:grid-cols-3 border-gray-100 border-4 rounded-lg gap-4 p-4 w-full md:overflow-y-auto overflow-x-auto">
 				{/* Left Column */}
-				<div className="overflow-y-auto max-h-[600px]">
+				<div className="snap-x md:snap-y overflow-x-auto max-h-[600px] md:overflow-y-auto whitespace-nowrap md:whitespace-normal">
 					{slice.items.map((item, index) => (
 						<div
 							key={index}
 							onClick={() => handleSelection(item)}
-							className="hover:bg-gray-100 cursor-pointer transition-all duration-300"
+							className="snap-center inline-block aspect-video w-full hover:opacity-90 cursor-pointer transition-all duration-30 mr-4"
 						>
 							<Project key={index} item={item} />
 						</div>
@@ -39,7 +39,7 @@ const Work = ({ slice }: WorkProps): JSX.Element => {
 				</div>
 
 				{/* Right Column */}
-				<div className="col-span-2 flex flex-col text-white">
+				<div className="md:col-span-2 flex flex-col text-white">
 					{selected && (
 						<>
 							<div className="flex gap-4 mb-4">
