@@ -46,7 +46,7 @@ const Work = ({ slice }: WorkProps): JSX.Element => {
 								<h1 className="text-3xl font-bold">
 									<PrismicRichText field={selected.title} />
 								</h1>
-								{selected.url.url && (
+								{selected?.url?.url && (
 									<PrismicNextLink
 										className="text-blue-400 border-2 rounded-lg px-4 py-1 text-center h-full hover:bg-blue-400 hover:text-white transition-all duration-300"
 										target="_blank"
@@ -83,7 +83,7 @@ const Work = ({ slice }: WorkProps): JSX.Element => {
 
 							{/* Add more fields like Description and Tech Stack if they exist */}
 							<div className="mt-4 flex space-x-4">
-								{selected.techStack?.map((tech: string, idx: number) => (
+								{selected?.techStack?.map((tech: string, idx: number) => (
 									<span
 										key={idx}
 										className="bg-gray-200 rounded-full px-3 py-1 text-sm"
