@@ -15,7 +15,7 @@ export type WorkProps = SliceComponentProps<Content.WorkSlice>;
  */
 const Work = ({ slice }: WorkProps): JSX.Element => {
 	const [selected, setSelected] = useState(slice.items[0]);
-	const handleSelection = (item) => {
+	const handleSelection = (item: any) => {
 		setSelected(item);
 	};
 	return (
@@ -83,7 +83,7 @@ const Work = ({ slice }: WorkProps): JSX.Element => {
 
 							{/* Add more fields like Description and Tech Stack if they exist */}
 							<div className="mt-4 flex space-x-4">
-								{selected.techStack?.map((tech, idx) => (
+								{selected.techStack?.map((tech: string, idx: number) => (
 									<span
 										key={idx}
 										className="bg-gray-200 rounded-full px-3 py-1 text-sm"
