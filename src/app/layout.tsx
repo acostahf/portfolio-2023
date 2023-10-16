@@ -26,7 +26,6 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className="dark:bg-purple-700 min-h-screen relative flex flex-col items-center justify-center">
-				{/* <Navbar /> */}
 				<div className="max-w-7xl">{children}</div>
 				<Analytics />
 
