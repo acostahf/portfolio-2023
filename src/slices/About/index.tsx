@@ -16,9 +16,9 @@ const About = ({ slice }: AboutProps): JSX.Element => {
 		<section
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
-			className="p-20"
+			className="p-4 mt-20 md:mt-0 md:p-20"
 		>
-			<div className="grid grid-cols-2">
+			<div className="md:grid md:grid-cols-2">
 				<div>
 					<h1 className="text-3xl text-white font-bold mb-4">About Me</h1>
 					<p className="text-white text-xl">

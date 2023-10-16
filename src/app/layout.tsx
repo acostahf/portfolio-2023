@@ -1,7 +1,7 @@
 import ".././styles/global.css";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
-import Navbar from "@/compoents/navbar";
+import Navbar from "@/components/navbar";
 
 export default function RootLayout({
 	children,

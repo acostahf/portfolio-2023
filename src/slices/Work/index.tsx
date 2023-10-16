@@ -39,7 +39,7 @@ const Work = ({ slice }: WorkProps): JSX.Element => {
 				</div>
 
 				{/* Right Column */}
-				<div className="md:col-span-2 flex flex-col text-white">
+				<div className="md:col-span-2 flex flex-col text-white mt-4 md:mt-0">
 					{selected && (
 						<>
 							<div className="flex gap-4 mb-4">
@@ -48,7 +48,7 @@ const Work = ({ slice }: WorkProps): JSX.Element => {
 								</h1>
 								{selected.url.url && (
 									<PrismicNextLink
-										className="text-blue-400 border-2 rounded-lg px-4 py-1 hover:bg-blue-400 hover:text-white transition-all duration-300"
+										className="text-blue-400 border-2 rounded-lg px-4 py-1 text-center h-full hover:bg-blue-400 hover:text-white transition-all duration-300"
 										target="_blank"
 										field={selected.url}
 									>
