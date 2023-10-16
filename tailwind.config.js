@@ -63,7 +63,7 @@ module.exports = {
 				bottomLeft: "move-to-bottom-left 12s infinite",
 			},
 			fontFamily: {
-				"concert-one": ["Concert One", "cursive"],
+				sans: ["var(--font-opensans)"],
 			},
 		},
 	},
