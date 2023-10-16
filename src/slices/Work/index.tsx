@@ -14,7 +14,7 @@ export type WorkProps = SliceComponentProps<Content.WorkSlice>;
  * Component for "Work" Slices.
  */
 const Work = ({ slice }: WorkProps): JSX.Element => {
-	const [selected, setSelected] = useState(slice.items[0]);
+	const [selected, setSelected] = useState(slice.items[0] as any);
 	const handleSelection = (item: any) => {
 		setSelected(item);
 	};
@@ -46,7 +46,7 @@ const Work = ({ slice }: WorkProps): JSX.Element => {
 								<h1 className="text-3xl font-bold">
 									<PrismicRichText field={selected.title} />
 								</h1>
-								{selected?.url?.url && (
+								{selected.url?.url && (
 									<PrismicNextLink
 										className="text-blue-400 border-2 rounded-lg px-4 py-1 text-center h-full hover:bg-blue-400 hover:text-white transition-all duration-300"
 										target="_blank"
