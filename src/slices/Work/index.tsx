@@ -42,7 +42,7 @@ const Work = ({ slice }: WorkProps): JSX.Element => {
 				<div className="md:col-span-2 flex flex-col text-white mt-4 md:mt-0">
 					{selected && (
 						<>
-							<div className="flex gap-4 mb-4">
+							<div className="flex md:flex-row flex-col gap-4 mb-4">
 								<h1 className="text-3xl font-bold">
 									<PrismicRichText field={selected.title} />
 								</h1>
