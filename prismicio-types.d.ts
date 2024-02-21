@@ -8,7 +8,8 @@ type HomeDocumentDataSlicesSlice =
   | RichTextSlice
   | HeroSlice
   | WorkSlice
-  | AboutSlice;
+  | AboutSlice
+  | TextChatSlice;
 
 /**
  * Content for Home documents
@@ -92,7 +93,8 @@ type PageDocumentDataSlicesSlice =
   | RichTextSlice
   | HeroSlice
   | WorkSlice
-  | AboutSlice;
+  | AboutSlice
+  | TextChatSlice;
 
 /**
  * Content for Page documents
@@ -310,6 +312,51 @@ export type RichTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *TextChat → Primary*
+ */
+export interface TextChatSliceDefaultPrimary {
+  /**
+   * idk field in *TextChat → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_chat.primary.idk
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  idk: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TextChat Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextChatSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextChatSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextChat*
+ */
+type TextChatSliceVariation = TextChatSliceDefault;
+
+/**
+ * TextChat Shared Slice
+ *
+ * - **API ID**: `text_chat`
+ * - **Description**: TextChat
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextChatSlice = prismic.SharedSlice<
+  "text_chat",
+  TextChatSliceVariation
+>;
+
+/**
  * Primary content in *Work → Items*
  */
 export interface WorkSliceDefaultItem {
@@ -447,6 +494,9 @@ declare module "@prismicio/client" {
       RichTextSlice,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      TextChatSlice,
+      TextChatSliceVariation,
+      TextChatSliceDefault,
       WorkSlice,
       WorkSliceVariation,
       WorkSliceDefault,
