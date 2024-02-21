@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import TwilioComponent from "@/components/twilioComp";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
