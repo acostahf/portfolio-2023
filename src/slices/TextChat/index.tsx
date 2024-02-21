@@ -14,7 +14,7 @@ export type TextChatProps = SliceComponentProps<Content.TextChatSlice>;
  */
 const TextChat = ({ slice }: TextChatProps): JSX.Element => {
 	let discordWebhook = process.env.NEXT_PUBLIC_DISCORD_WEBHOOK_URL || "";
-
+	//eslint-disable-next-line
 	const visited = localStorage.getItem("visited");
 	if (!visited && discordWebhook) {
 		const handleButtonClick = async () => {
@@ -28,7 +28,7 @@ const TextChat = ({ slice }: TextChatProps): JSX.Element => {
 						/* Add your request body here */
 					}),
 				});
-
+				//eslint-disable-next-line
 				localStorage.setItem("visited", "true");
 			} catch (error) {
 				console.error("Error:", error);
