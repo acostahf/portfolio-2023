@@ -15,7 +15,7 @@ const TwilioComponent = () => {
 					/* Add your request body here */
 				}),
 			});
-
+			//eslint-disable-next-line
 			localStorage.setItem("visited", "true");
 		} catch (error) {
 			console.error("Error:", error);
@@ -23,6 +23,7 @@ const TwilioComponent = () => {
 	};
 
 	useEffect(() => {
+		//eslint-disable-next-line
 		const visited = localStorage.getItem("visited");
 		if (!visited) {
 			handleButtonClick();
