@@ -31,9 +31,15 @@ const Work = ({ slice }: WorkProps): JSX.Element => {
 						<div
 							key={index}
 							onClick={() => handleSelection(item)}
-							className="snap-center inline-block aspect-video w-full hover:opacity-90 cursor-pointer transition-all duration-30 mr-4"
+							className={`snap-center inline-block aspect-video w-full cursor-pointer mr-4 ${
+								selected === item ? "bg-gray-800" : "hover:bg-gray-700"
+							}`}
 						>
-							<Project key={index} item={item} />
+							<Project
+								key={index}
+								item={item}
+								isSelected={selected === item ? true : false}
+							/>
 						</div>
 					))}
 				</div>
