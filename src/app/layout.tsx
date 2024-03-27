@@ -33,7 +33,7 @@ export default function RootLayout({
 					rel="stylesheet"
 				/> */}
 			</head>
-			<body className="dark:bg-purple-700 min-h-screen relative flex flex-col items-center justify-center">
+			<body className="bg-purple-700 min-h-screen relative flex flex-col items-center justify-center">
 				<div className="max-w-7xl">{children}</div>
 				<Analytics />
 				<PrismicPreview repositoryName={repositoryName} />

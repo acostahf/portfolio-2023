@@ -25,7 +25,8 @@
             "hero": { "type": "SharedSlice" },
             "work": { "type": "SharedSlice" },
             "about": { "type": "SharedSlice" },
-            "text_chat": { "type": "SharedSlice" }
+            "text_chat": { "type": "SharedSlice" },
+            "featured": { "type": "SharedSlice" }
           }
         }
       }

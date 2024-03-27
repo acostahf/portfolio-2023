@@ -9,7 +9,8 @@ type HomeDocumentDataSlicesSlice =
   | HeroSlice
   | WorkSlice
   | AboutSlice
-  | TextChatSlice;
+  | TextChatSlice
+  | FeaturedSlice;
 
 /**
  * Content for Home documents
@@ -94,7 +95,8 @@ type PageDocumentDataSlicesSlice =
   | HeroSlice
   | WorkSlice
   | AboutSlice
-  | TextChatSlice;
+  | TextChatSlice
+  | FeaturedSlice;
 
 /**
  * Content for Page documents
@@ -167,10 +169,77 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
+type ResumeDocumentDataSlicesSlice = never;
+
+/**
+ * Content for resume documents
+ */
+interface ResumeDocumentData {
+  /**
+   * Slice Zone field in *resume*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ResumeDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *resume*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: resume.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *resume*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *resume*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: resume.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * resume document from Prismic
+ *
+ * - **API ID**: `resume`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ResumeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ResumeDocumentData>,
+    "resume",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | HomeDocument
   | NavigationitemDocument
-  | PageDocument;
+  | PageDocument
+  | ResumeDocument;
 
 /**
  * Primary content in *About → Primary*
@@ -213,6 +282,121 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Primary content in *Featured → Primary*
+ */
+export interface FeaturedSliceDefaultPrimary {
+  /**
+   * projectImg field in *Featured → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured.primary.projectimg
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  projectimg: prismic.ImageField<never>;
+
+  /**
+   * title field in *Featured → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Featured → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * role field in *Featured → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured.primary.role
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  role: prismic.RichTextField;
+
+  /**
+   * url field in *Featured → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured.primary.url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  url: prismic.LinkField;
+
+  /**
+   * status field in *Featured → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured.primary.status
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  status: prismic.RichTextField;
+
+  /**
+   * tech field in *Featured → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured.primary.tech
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tech: prismic.RichTextField;
+
+  /**
+   * responsibilities  field in *Featured → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured.primary.responsibilities
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  responsibilities: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Featured Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeaturedSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Featured*
+ */
+type FeaturedSliceVariation = FeaturedSliceDefault;
+
+/**
+ * Featured Shared Slice
+ *
+ * - **API ID**: `featured`
+ * - **Description**: Featured
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedSlice = prismic.SharedSlice<
+  "featured",
+  FeaturedSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Primary*
@@ -439,6 +623,17 @@ export interface WorkSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   responsibilities: prismic.RichTextField;
+
+  /**
+   * Feature field in *Work → Items*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: work.items[].feature
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  feature: prismic.BooleanField;
 }
 
 /**
@@ -484,10 +679,15 @@ declare module "@prismicio/client" {
       NavigationitemDocumentData,
       PageDocument,
       PageDocumentData,
+      ResumeDocument,
+      ResumeDocumentData,
       AllDocumentTypes,
       AboutSlice,
       AboutSliceVariation,
       AboutSliceDefault,
+      FeaturedSlice,
+      FeaturedSliceVariation,
+      FeaturedSliceDefault,
       HeroSlice,
       HeroSliceVariation,
       HeroSliceDefault,

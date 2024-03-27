@@ -1,8 +1,8 @@
 {
-  "id": "work",
+  "id": "featured",
   "type": "SharedSlice",
-  "name": "Work",
-  "description": "Work",
+  "name": "Featured",
+  "description": "Featured",
   "variations": [
     {
       "id": "default",
@@ -11,8 +11,7 @@
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
-      "primary": {},
-      "items": {
+      "primary": {
         "projectimg": {
           "type": "Image",
           "config": {
@@ -64,7 +63,7 @@
         "tech": {
           "type": "StructuredText",
           "config": {
-            "label": "Tech",
+            "label": "tech",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
@@ -73,22 +72,14 @@
         "responsibilities": {
           "type": "StructuredText",
           "config": {
-            "label": "Responsibilities ",
+            "label": "responsibilities ",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
-        },
-        "feature": {
-          "type": "Boolean",
-          "config": {
-            "label": "Feature",
-            "default_value": false,
-            "placeholder_true": "true",
-            "placeholder_false": "false"
-          }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }

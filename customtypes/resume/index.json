@@ -1,6 +1,6 @@
 {
-  "id": "home",
-  "label": "Home",
+  "id": "resume",
+  "label": "resume",
   "format": "page",
   "repeatable": false,
   "status": true,
@@ -9,16 +9,7 @@
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
-        "config": {
-          "choices": {
-            "rich_text": { "type": "SharedSlice" },
-            "hero": { "type": "SharedSlice" },
-            "work": { "type": "SharedSlice" },
-            "about": { "type": "SharedSlice" },
-            "text_chat": { "type": "SharedSlice" },
-            "featured": { "type": "SharedSlice" }
-          }
-        }
+        "config": { "choices": {} }
       }
     },
     "SEO & Metadata": {
