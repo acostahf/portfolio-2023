@@ -32,7 +32,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 				<a
 					href="https://www.linkedin.com/in/fabianacostadev/"
 					target="_blank"
-					className="w-4 md:w-10 h-4 md:h-10 text-gray-400 mr-4 hover:text-blue-700"
+					className="w-4 z-20 md:w-10 h-4 md:h-10 text-gray-400 mr-4 hover:text-blue-700"
 				>
 					<FontAwesomeIcon
 						icon={faLinkedin}
@@ -42,7 +42,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 				<a
 					href="https://github.com/acostahf"
 					target="_blank"
-					className="w-4 md:w-10 h-4 md:h-10 text-gray-400 hover:text-fuchsia-700"
+					className="w-4 z-20 md:w-10 h-4 md:h-10 text-gray-400 hover:text-fuchsia-700"
 				>
 					<FontAwesomeIcon
 						icon={faGithub}

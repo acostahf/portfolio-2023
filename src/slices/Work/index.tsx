@@ -54,7 +54,7 @@ const Work = ({ slice }: WorkProps): JSX.Element => {
 								</h1>
 								{selected.url?.url && (
 									<PrismicNextLink
-										className="text-blue-400 border-2 rounded-lg px-4 py-1 text-center h-full hover:bg-blue-400 hover:text-white transition-all duration-300"
+										className="text-blue-400 z-20 border-2 rounded-lg px-4 py-1 text-center h-full hover:bg-blue-400 hover:text-white transition-all duration-300"
 										target="_blank"
 										field={selected.url}
 									>
