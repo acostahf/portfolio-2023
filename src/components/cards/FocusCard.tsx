@@ -21,7 +21,7 @@ interface FocusCardProps {
 	// card: any;
 	hovered: number | null;
 	setHovered: React.Dispatch<React.SetStateAction<number | null>>;
-	slug: string;
+	slug: RichTextField;
 }
 
 const FocusCard = ({
