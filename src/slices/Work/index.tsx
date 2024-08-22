@@ -16,6 +16,7 @@ export type WorkProps = SliceComponentProps<Content.WorkSlice>;
  */
 const Work = ({ slice }: WorkProps): JSX.Element => {
 	const [hovered, setHovered] = useState<number | null>(null);
+
 	return (
 		<section
 			data-slice-type={slice.slice_type}

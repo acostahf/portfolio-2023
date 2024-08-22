@@ -133,6 +133,14 @@
 							"__TYPE__": "BooleanContent",
 							"value": false
 						}
+					],
+					[
+						"slug",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "announced",
+							"type": "Text"
+						}
 					]
 				]
 			}

@@ -12,15 +12,15 @@ export const { repositoryName } = sm;
  * The project's Prismic Route Resolvers. This list determines a Prismic document's URL.
  */
 const routes: prismic.ClientConfig["routes"] = [
-  {
-    type: "page",
-    path: "/:uid",
-  },
-  {
-    type: "page",
-    uid: "home",
-    path: "/",
-  },
+	{
+		type: "page",
+		path: "/:uid",
+	},
+	{
+		type: "page",
+		uid: "home",
+		path: "/",
+	},
 ];
 
 /**
@@ -30,20 +30,20 @@ const routes: prismic.ClientConfig["routes"] = [
  * @param config - Configuration for the Prismic client.
  */
 export const createClient = ({
-  previewData,
-  req,
-  ...config
+	previewData,
+	req,
+	...config
 }: prismicNext.CreateClientConfig = {}) => {
-  const client = prismic.createClient(sm.repositoryName, {
-    routes,
-    fetchOptions:
-      process.env.NODE_ENV === "production"
-        ? { next: { tags: ["prismic"] }, cache: "force-cache" }
-        : { next: { revalidate: 5 } },
-    ...config,
-  });
+	const client = prismic.createClient(sm.repositoryName, {
+		routes,
+		fetchOptions:
+			process.env.NODE_ENV === "production"
+				? { next: { tags: ["prismic"] }, cache: "force-cache" }
+				: { next: { revalidate: 5 } },
+		...config,
+	});
 
-  prismicNext.enableAutoPreviews({ client, previewData, req });
+	prismicNext.enableAutoPreviews({ client, previewData, req });
 
-  return client;
+	return client;
 };

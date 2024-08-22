@@ -1,0 +1,39 @@
+{
+  "id": "heading",
+  "type": "SharedSlice",
+  "name": "Heading",
+  "description": "Heading",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "title", "placeholder": "" }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "description",
+            "placeholder": "Provide a brief summary of what the project is about, including the main goal or purpose."
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": { "label": "image", "constraint": {}, "thumbnails": [] }
+        }
+      },
+      "items": {
+        "stack": {
+          "type": "Text",
+          "config": { "label": "stack", "placeholder": "" }
+        }
+      }
+    }
+  ]
+}

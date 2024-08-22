@@ -1,9 +1,11 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { PrismicNextImage } from "@prismicio/next";
 
 import React from "react";
 import { RichTextField, LinkField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
+import { useRouter } from "next/navigation";
 
 interface FocusCardProps {
 	title: RichTextField;
@@ -19,15 +21,12 @@ interface FocusCardProps {
 	// card: any;
 	hovered: number | null;
 	setHovered: React.Dispatch<React.SetStateAction<number | null>>;
+	slug: string;
 }
 
 const FocusCard = ({
 	title,
-	description,
-	url,
-	status,
-	role,
-	tech,
+	slug,
 	projectimg,
 	feature,
 	// card,
@@ -35,10 +34,16 @@ const FocusCard = ({
 	hovered,
 	setHovered,
 }: FocusCardProps) => {
+	const router = useRouter();
+	const handleSelect = () => {
+		//use next link to redirect to the projects/[uid] page
+		router.push(`/projects/${slug}`);
+	};
 	return (
 		<div
 			onMouseEnter={() => setHovered(index)}
 			onMouseLeave={() => setHovered(null)}
+			onClick={handleSelect}
 			className={cn(
 				"rounded-lg z-20 cursor-pointer relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-56 w-full transition-all duration-300 ease-out",
 				hovered !== null && hovered !== index && "blur-sm scale-[0.98]"

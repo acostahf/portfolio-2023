@@ -87,6 +87,10 @@
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
+        },
+        "slug": {
+          "type": "Text",
+          "config": { "label": "slug", "placeholder": "" }
         }
       }
     }
