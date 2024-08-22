@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { PrismicNextImage } from "@prismicio/next";
 
 import React from "react";
-import { RichTextField, LinkField } from "@prismicio/client";
+import { RichTextField, LinkField, KeyTextField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import { useRouter } from "next/navigation";
 
@@ -21,7 +21,7 @@ interface FocusCardProps {
 	// card: any;
 	hovered: number | null;
 	setHovered: React.Dispatch<React.SetStateAction<number | null>>;
-	slug: RichTextField;
+	slug: KeyTextField;
 }
 
 const FocusCard = ({
