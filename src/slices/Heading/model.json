@@ -26,6 +26,10 @@
         "image": {
           "type": "Image",
           "config": { "label": "image", "constraint": {}, "thumbnails": [] }
+        },
+        "website": {
+          "type": "Link",
+          "config": { "label": "website", "placeholder": "", "select": null }
         }
       },
       "items": {

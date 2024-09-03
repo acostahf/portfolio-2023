@@ -520,6 +520,16 @@ export interface HeadingSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * website field in *Heading → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heading.primary.website
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  website: prismic.LinkField;
 }
 
 /**

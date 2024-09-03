@@ -1,5 +1,5 @@
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 
 /**
@@ -11,6 +11,8 @@ export type HeadingProps = SliceComponentProps<Content.HeadingSlice>;
  * Component for "Heading" Slices.
  */
 const Heading = ({ slice }: HeadingProps): JSX.Element => {
+	const linkType = slice.primary.website.link_type;
+
 	return (
 		<section
 			data-slice-type={slice.slice_type}
@@ -30,10 +32,22 @@ const Heading = ({ slice }: HeadingProps): JSX.Element => {
 						field={slice.primary.image}
 					/>
 				</div>
-				<div className="max-w-3xl">
-					<h1 className="text-4xl text-white font-bold mb-4">
+				<div className="max-w-3xl flex flex-col gap-3">
+					<h1 className="text-4xl text-white font-bold">
 						{slice.primary.title}
 					</h1>
+					{linkType !== "Any" ? (
+						<PrismicNextLink
+							className="text-blue-500 hover:text-blue-400"
+							field={slice.primary.website}
+							target="_blank"
+						>
+							Visit Project
+						</PrismicNextLink>
+					) : (
+						<p className="text-red-500">Pending...</p>
+					)}
+
 					<span className="text-white text-md">
 						{slice.primary.description}
 					</span>
