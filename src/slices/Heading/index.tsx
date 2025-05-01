@@ -2,6 +2,7 @@ import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import * as prismic from "@prismicio/client";
+import PgBackBtn from "@/components/buttons/PgBackBtn";
 
 /**
  * Props for `Heading`.
@@ -26,6 +27,10 @@ const Heading = ({ slice }: HeadingProps): JSX.Element => {
             data-slice-variation={slice.variation}
             className="relative w-full py-10"
         >
+            <div className="pb-4">
+                <PgBackBtn />
+            </div>
+
             {/* Media Section */}
             <div className="relative w-full aspect-video">
                 {video.url ? (
