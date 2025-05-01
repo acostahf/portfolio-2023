@@ -37,10 +37,24 @@
 				"thumbnails": {}
 			},
 			"website": {
+				"key": "a75bf1e2-f1d2-4f91-b6d0-260712ee6f5d",
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev"
+				}
+			},
+			"video": {
+				"__TYPE__": "LinkContent",
+				"key": "151334ae-6446-4cc3-811d-9be53963894c",
+				"value": {
+					"__TYPE__": "FileLink",
+					"id": "mock_Media_link",
+					"kind": "file",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"text": "plant"
 				}
 			}
 		},
